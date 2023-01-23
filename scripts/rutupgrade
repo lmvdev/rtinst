@@ -10,11 +10,11 @@
 
 PATH=/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/bin:/sbin
 
-newvers=$(curl -s https://raw.githubusercontent.com/Novik/ruTorrent/master/js/webui.js | grep -m 1 version: | cut -d \" -f2)
+newvers=$(curl -s https://raw.githubusercontent.com/Novik/ruTorrent/v3.10/js/webui.js | grep -m 1 version: | cut -d \" -f2)
 oldvers=$(grep -m 1 version: /var/www/rutorrent/js/webui.js | cut -d \" -f2)
 
 ruflag=0
-rurelease=$(curl -s "https://api.github.com/repos/Novik/ruTorrent/releases/latest" | awk -F '"' '/tag_name/{print $4}')
+rurelease=$(curl -s "https://api.github.com/repos/Novik/ruTorrent/releases/tags/v3.10" | awk -F '"' '/tag_name/{print $4}')
 force_yes=1
 restore_old=1
 install_master=1
